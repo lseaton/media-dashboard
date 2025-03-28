@@ -4,33 +4,57 @@
 }
 
 .main {
-	display: flex;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
+	outline: 1px solid red;
 }
 
 .card {
-	display: flex;
-	width: 130px;
-	height: 200px;
-	background: lightgray;
 	outline: 2px solid black;
+	height: 300px;
+	aspect-ratio: 2 / 3;
 	overflow: hidden;
 }
 
-.card:hover {
-	animation-name: reveal-info;
-	animation-duration: 1s;
-	width: 350px;
+.info {
+	opacity: 0%;
+	position: relative;
+	transform: translateY(-300px);
 }
 
-.card img {
-	width: 130px;
-}
-
-@keyframes reveal-info {
+@keyframes fade-in {
 	0% {
-		width: 100px;
+		opacity: 0%;
 	}
 	100% {
-		width: 350px;
+		opacity: 100%;
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 100%;
+	}
+	100% {
+		opacity: 0%;
+	}
+}
+
+@keyframes three-quarters-fade-out {
+	0% {
+		opacity: 100%;
+	}
+	100% {
+		opacity: 25%;
+	}
+}
+
+@keyframes three-quarters-fade-in {
+	0% {
+		opacity: 25%;
+	}
+	100% {
+		opacity: 100%;
 	}
 }
