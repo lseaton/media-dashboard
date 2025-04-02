@@ -1,26 +1,53 @@
 * {
 	margin: 0;
-	padding: 0;
 }
 
-.main {
+.main-area {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
+}
+.sidebar {
 	display: grid;
 	gap: 20px;
-	grid-template-columns: repeat(4, 1fr);
-	outline: 1px solid red;
+}
+
+.sidebar div {
+	border-radius: 6px;
+}
+
+.statistics {
+	background: lavender;
+}
+
+.next {
+	background: pink;
+}
+
+.main-grid {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-area: 1 / 1 / span 2 / span 3;
 }
 
 .card {
-	outline: 2px solid black;
+	border-radius: 6px;
 	height: 300px;
+	width: 200px;
 	aspect-ratio: 2 / 3;
-	overflow: hidden;
+}
+
+.card img {
+	border-radius: inherit;
+	height: inherit;
+	width: inherit;
 }
 
 .info {
 	opacity: 0%;
 	position: relative;
-	transform: translateY(-300px);
+	transform: translate(5px, -300px);
 }
 
 @keyframes fade-in {
